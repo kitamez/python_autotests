@@ -1,7 +1,7 @@
 import requests
 
 URL = 'https://api.pokemonbattle.ru/v2'
-TOKEN = '4c6a62dfc800ad9fbc0ba8c3cffdbe78'
+TOKEN = '?'
 HEADER = {'Content-type': 'application/json', 'trainer_token': TOKEN}
 
 # Создание покемона и вывод результата
@@ -9,8 +9,8 @@ create_pokemon = requests.post (
     url = f'{URL}/pokemons',
     headers = HEADER,
     json = {
-        "name": "Паганини",
-        "photo_id": 400
+        "name": "Имя",
+        "photo_id": 123
         }
 )
 print(create_pokemon.text)
@@ -25,8 +25,8 @@ rename_pokemon = requests.put (
     headers = HEADER, 
     json = {
         "pokemon_id": f"{POKEMON_ID}",
-        "name": "Валера",
-        "photo_id": 200
+        "name": "ИмяИмя",
+        "photo_id": 321
     }
 )
 print(rename_pokemon.text)
